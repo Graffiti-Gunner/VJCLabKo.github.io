@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>VJC Lab</title>
+    <meta charset="UTF-8">
+
+    <meta name="description" content="VJC Lab의 공식 사이트 입니다.">
+    <meta name="keywords" content="Team, VJC, vjc, Visual, Visual Nobel, VN, Vocaloid, vocaloid, vocaro, ボカロ, Japanese, 日本語, Junction ,ジャンクション, Culture, Lab, Laboratory, ラボラトリー,
+    팀, 비노컬, 비쥬얼 노벨, 소설, 보컬로이드, 보카로, 일본, 교차, 문화, 컬쳐, 연구, 연구소">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/g_menu.css">
+    <link rel="stylesheet" href="css/g_footer.css">
+    <link rel="stylesheet" href="css/masthead-content.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/ko.js"></script>
+    <script type="text/javascript" src="js/loader.js"></script>
+    <script type="text/javascript" src="js/time.js"></script>
+</head>
+
+<body onload="showMein(2000)" style="margin:0;">
+    <nav id="global-nav" style="display: none;" class="fadeIn">
+        <h1>MENU</h1>
+        <ul class="global-nav__list">
+            <li class="global-nav__item"><a href="index.html" class="global-nav__link top current" title="톱 페이지">TOP</a></li>
+            <li class="global-nav__item"><a href="#system" class="global-nav__link system" title="시스템">SYSTEM</a></li>
+            <li class="global-nav__item"><a href="#character" class="global-nav__link character" title="캐릭터">CHARACTER</a></li>
+            <li class="global-nav__item"><a href="#staffs" class="global-nav__link about " title="정보">ABOUT</a></li>
+            <li class="global-nav__item"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a></li>
+        </ul>
+    </nav>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("global-nav");
+          if (x.className === "fadeIn") {
+            x.className += " responsive";
+            document.querySelector("#global-nav.fadeIn.responsive ul.global-nav__list li.global-nav__item a.icon i").className = "fa fa-close";
+          } else {
+            x.className = "fadeIn";
+            document.querySelector("#global-nav.fadeIn ul.global-nav__list li.global-nav__item a.icon i").className = "fa fa-bars";
+          }
+        }
+        </script>
+
+    <div id="LoaderOverlay">
+        <div id="LoaderSlide"></div>
+        <div id="LoaderLoader">
+            <div id="LoaderBar"></div>
+            <div id="LoaderButton">Start!</div>
+        </div>
+    </div>
+
+    <content>
+        <div id="masthead-content" style="display: none;" class="fadeIn">
+            <div class="time">
+                유감 스럽게도, 현재 시각은 몇 시 인지 모르겠습니다.<br>잠시만 기다려 주신다면, 서버와 동기화 하여 시간을 알아낼 수 있습니다.
+            </div>
+            <!-- 모바일일때 보임-->
+            <div class="warn">현재 기기를 가로로 하시거나</br>화면을 횡스크롤 해주세요.</br>ps: 캐릭 정보는 사진의 오른편에 적혀있어요</div>
+
+            <div id="character-detail">
+                <div class="content character-detail">
+                    <div class="descripts">
+                        <div class="content-title">
+                            <ul style="list-style-type:none;">
+                                <li class="ko">
+                                    <ruby>
+                                        <div>발랜타인 루시</div><rp>(</rp><rt>Valentine Lucy</rt><rp>)</rp>
+                                    </ruby>
+                                </li>
+                                <li class="jp">
+                                    バレンタイン ルーシー
+                                </li>
+                                <li>Img Author(owner) : Anonymous</li>
+                                <li>CV</li>
+                                    <ul style="list-style-type:none; margin-left:-30px; font-size: 1.2em;">
+                                        <li><b>노별이</b> (韓)</li>
+                                    <li>
+                                        <ruby>
+                                            <b>마이하라 유메</b><rp>(</rp><rt style="font-size: 1.2em;">舞原ゆめ</rt><rp>)</rp>
+                                        </ruby> (日本語)
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="character-voice">
+                            <div class="chrText">"루시는... 긴 꿈을 꾸고 있었던 것만 같아요. 아주 기나긴 꿈을, 꾸고 있었던 것만 같아요."</div>
+                            <ul class="btn-voice">
+                                <il><button>듣기 1<i class="material-icons">audiotrack</i></button></il>
+                                <il><button>듣기 2<i class="material-icons">audiotrack</i></button></il>
+                                <il><button>듣기 3<i class="material-icons">audiotrack</i></button></il>
+                            </ul>
+                            <div class="voice-message" data-id="1" data-track="4">
+                                <div class="text">TEST</div><i class="icon icon-voice"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/jomin398/Adv-ko-KaTalk-Ai-Rucy--Private/blob/master/images/20200113_222152.jpg">
+                        <img src="images/01.racy1.jpg" style="width: 300px; height: auto; right: 0; left: 15%; top: 20%;" alt="루시의 모습 CG1" class="character-detail__body">
+                    </a>
+                </div>
+                <div class="modal-btn modal-btn--prev icon icon-arrow-prev"></div>
+                <div class="modal-btn modal-btn--next icon icon-arrow-next"></div>
+            </div>
+        </div>
+    </content>
+    
+    <footer id="global-footer" style="display: none;" class="fadeIn">
+        <nav class="contact">
+            <a style="padding: 0; border-right:none;" href="https://github.com/jomin398/">제작진</a>
+            <div id="social-btn-footer" style="margin-bottom:7px; margin-right:2px;">
+                <a href="#b1">Test1</a>
+                <a href="#b2">Test2</a>
+            </div>
+            <a href="#EULA">이용약관</a>
+            <a href="#policy-privacy" style="margin-right:-7px;">개인정보 취급 방침</a>
+        </nav>
+    
+        <div class="copyright" style="padding-right: 10px;">
+            <p>© VJC Lab, Tm. / © GitHub, Inc.</p>
+            <!--  / © Piapro. / Crypton Future Media, Inc. -->
+            <p>Contact webmaster for more information.</p>
+        </div>
+    </footer>
+</body>
+</html>
