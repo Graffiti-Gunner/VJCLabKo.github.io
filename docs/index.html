@@ -128,5 +128,23 @@
             <p>Contact webmaster for more information.</p>
         </div>
     </footer>
+    <script>
+        fetch("https://docs.google.com/document/d/1JKjkQGIJDQi6zTkMrGo5Bvh3Ys-z4sPVmyKU26t7_ss/export?format=txt", {
+  "headers": {
+    "access-control-allow-origin": "*",
+    "x-requested-with": "XMLHttpRequest"
+  }
+  "mode": "cors",
+  "credentials": "omit"
+}).then(res=> {
+            console.log(res)
+            return res.text();
+          })
+          .then(res=> {
+            let data = JSON.parse(res);
+            console.log(data);
+            return data;
+            })
+    </script>
 </body>
 </html>
