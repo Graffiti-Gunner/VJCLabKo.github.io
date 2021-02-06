@@ -1,3 +1,4 @@
+var debugMode = false;
 var gdDlLink = {
     /**
     * 구글 드라이브 링크를 변환 해주는 기능입니다.
@@ -51,9 +52,10 @@ function infodownloader(url,headers,outType){
  * @param {string} outType set output type
  * @returns A Promise for the completion of the callback.
  */
+let furl = (!debugMode)?url:'https://cors-anywhere.herokuapp.com/' +url;
 if(!headers){
     headers = {"headers":{"X-Requested-With": "XMLHttpRequest"}};}
-    let promiss = fetch('https://cors-anywhere.herokuapp.com/' +url,headers);
+    let promiss = fetch(furl,headers);
     //let promiss = fetch(url,headers);
 if(outType == 'json'){
     promiss = promiss.then(res=> {
@@ -66,7 +68,7 @@ if(outType == 'json'){
         return data;
         })
 }else{
-    promiss = fetch('https://cors-anywhere.herokuapp.com/' +url,headers).then(res=> {
+    promiss = fetch(furl,headers).then(res=> {
         console.log(res)
         return res.text();
       });
