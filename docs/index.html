@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <title>VJC Lab</title>
@@ -18,6 +19,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/ko.js"></script>
+    <script type="text/javascript" src="js/DLM.js"></script>
     <script type="text/javascript" src="js/loader.js"></script>
     <script type="text/javascript" src="js/time.js"></script>
 </head>
@@ -26,27 +28,29 @@
     <nav id="global-nav" style="display: none;" class="fadeIn">
         <h1>MENU</h1>
         <ul class="global-nav__list">
-            <li class="global-nav__item"><a href="index.html" class="global-nav__link top current" title="톱 페이지">TOP</a></li>
+            <li class="global-nav__item"><a href="index.html" class="global-nav__link top current" title="톱 페이지">TOP</a>
+            </li>
             <li class="global-nav__item"><a href="#system" class="global-nav__link system" title="시스템">SYSTEM</a></li>
-            <li class="global-nav__item"><a href="#character" class="global-nav__link character" title="캐릭터">CHARACTER</a></li>
+            <li class="global-nav__item"><a href="#character" class="global-nav__link character"
+                    title="캐릭터">CHARACTER</a></li>
             <li class="global-nav__item"><a href="#staffs" class="global-nav__link about " title="정보">ABOUT</a></li>
             <li class="global-nav__item"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-              </a></li>
+                    <i class="fa fa-bars"></i>
+                </a></li>
         </ul>
     </nav>
     <script>
         function myFunction() {
-          var x = document.getElementById("global-nav");
-          if (x.className === "fadeIn") {
-            x.className += " responsive";
-            document.querySelector("#global-nav.fadeIn.responsive ul.global-nav__list li.global-nav__item a.icon i").className = "fa fa-close";
-          } else {
-            x.className = "fadeIn";
-            document.querySelector("#global-nav.fadeIn ul.global-nav__list li.global-nav__item a.icon i").className = "fa fa-bars";
-          }
+            var x = document.getElementById("global-nav");
+            if (x.className === "fadeIn") {
+                x.className += " responsive";
+                document.querySelector("#global-nav.fadeIn.responsive ul.global-nav__list li.global-nav__item a.icon i").className = "fa fa-close";
+            } else {
+                x.className = "fadeIn";
+                document.querySelector("#global-nav.fadeIn ul.global-nav__list li.global-nav__item a.icon i").className = "fa fa-bars";
+            }
         }
-        </script>
+    </script>
 
     <div id="LoaderOverlay">
         <div id="LoaderSlide"></div>
@@ -71,7 +75,10 @@
                             <ul style="list-style-type:none;">
                                 <li class="ko">
                                     <ruby>
-                                        <div>발랜타인 루시</div><rp>(</rp><rt>Valentine Lucy</rt><rp>)</rp>
+                                        <div>발랜타인 루시</div>
+                                        <rp>(</rp>
+                                        <rt>Valentine Lucy</rt>
+                                        <rp>)</rp>
                                     </ruby>
                                 </li>
                                 <li class="jp">
@@ -79,11 +86,14 @@
                                 </li>
                                 <li>Img Author(owner) : Anonymous</li>
                                 <li>CV</li>
-                                    <ul style="list-style-type:none; margin-left:-30px; font-size: 1.2em;">
-                                        <li><b>노별이</b> (韓)</li>
+                                <ul style="list-style-type:none; margin-left:-30px; font-size: 1.2em;">
+                                    <li><b>노별이</b> (韓)</li>
                                     <li>
                                         <ruby>
-                                            <b>마이하라 유메</b><rp>(</rp><rt style="font-size: 1.2em;">舞原ゆめ</rt><rp>)</rp>
+                                            <b>마이하라 유메</b>
+                                            <rp>(</rp>
+                                            <rt style="font-size: 1.2em;">舞原ゆめ</rt>
+                                            <rp>)</rp>
                                         </ruby> (日本語)
                                     </li>
                                 </ul>
@@ -101,8 +111,11 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://github.com/jomin398/Adv-ko-KaTalk-Ai-Rucy--Private/blob/master/images/20200113_222152.jpg">
-                        <img src="images/01.racy1.jpg" style="width: 300px; height: auto; right: 0; left: 15%; top: 20%;" alt="루시의 모습 CG1" class="character-detail__body">
+                    <a
+                        href="https://github.com/jomin398/Adv-ko-KaTalk-Ai-Rucy--Private/blob/master/images/20200113_222152.jpg">
+                        <img src="images/01.racy1.jpg"
+                            style="width: 300px; height: auto; right: 0; left: 15%; top: 20%;" alt="루시의 모습 CG1"
+                            class="character-detail__body">
                     </a>
                 </div>
                 <div class="modal-btn modal-btn--prev icon icon-arrow-prev"></div>
@@ -110,7 +123,7 @@
             </div>
         </div>
     </content>
-    
+
     <footer id="global-footer" style="display: none;" class="fadeIn">
         <nav class="contact">
             <a style="padding: 0; border-right:none;" href="https://github.com/jomin398/">제작진</a>
@@ -121,7 +134,7 @@
             <a href="#EULA">이용약관</a>
             <a href="#policy-privacy" style="margin-right:-7px;">개인정보 취급 방침</a>
         </nav>
-    
+
         <div class="copyright" style="padding-right: 10px;">
             <p>© VJC Lab, Tm. / © GitHub, Inc.</p>
             <!--  / © Piapro. / Crypton Future Media, Inc. -->
@@ -129,17 +142,14 @@
         </div>
     </footer>
     <script>
-        fetch(gdDlLink.trans("https://docs.google.com/document/d/1JKjkQGIJDQi6zTkMrGo5Bvh3Ys-z4sPVmyKU26t7_ss/edit?usp=sharing"),{"headers":{
-            "Access-Control-Allow-Origin":"*",
-        }}).then(res=>{console.log(res)}).then(res=> {
-            console.log(res)
-            return res.text();
-          })
-          .then(res=> {
-            let data = JSON.parse(res);
-            console.log(data);
-            return data;
+
+        DLM.dl(DLM.gdMgr.trans("https://docs.google.com/document/d/1JKjkQGIJDQi6zTkMrGo5Bvh3Ys-z4sPVmyKU26t7_ss/edit?usp=sharing"), null, 'json')
+            .then(res => {
+                let data = JSON.parse(res);
+                console.log(data);
+                return data;
             })
     </script>
 </body>
+
 </html>
