@@ -1,0 +1,68 @@
+#character-detail {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 100%;
+}
+
+#character-detail .content-title {
+    color: white;
+    position: absolute;
+    left: 2%;
+    top: 3%;
+}
+.character-detail__body {
+    display: block;
+    position: absolute;
+    /* left: 20%; */
+    left: -10%;
+}
+#character-detail div.content.character-detail[data-name="Lucy"] .character-voice {
+    top: 25%;
+}
+
+#character-detail div.content.character-detail[data-name="Miku"] .character-voice {
+    top: 25%;
+    left: 45%;
+}
+
+
+#character-detail div.content.character-detail[data-name="Lucy"] img {
+    display: block;
+    top: 115px;
+    width: 420px;
+    height: auto;
+}
+
+#character-detail div.content.character-detail[data-name="Miku"] img {
+    top: 8%;
+    width: 30%;
+}
+
+#character-detail div.content.character-detail[data-name="Miku"] .character-detail__body {
+    left: 10%;
+}
+
+#character-detail .character-voice {
+    width: 300px;
+    top: 25%;
+    left: 45%;
+    font-size: 17px;
+}
+
+@media screen and (min-width: 800px) {
+    .character-detail__body {
+        left: 15%;
+    }
+    #character-detail div.content.character-detail[data-name="Lucy"] .character-detail__body{
+        left: 5%;
+    }
+    #character-detail .character-voice {
+        height: auto;
+        left: 55%;
+    }
+    #character-detail div.content.character-detail[data-name="Lucy"] .character-voice {
+        left: 45%;
+    }
+}

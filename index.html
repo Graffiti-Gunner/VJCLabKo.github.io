@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="初音ミク Voiced Time and Battery Notification Service">
+	<meta name="keywords" content="Team, VJC, vjc, Visual, Visual Nobel, VN, Vocaloid, vocaloid, vocaro, ボカロ, 初音ミク, Japanese, 日本語, Junction ,ジャンクション, Culture, Lab, Laboratory, ラボラトリー,
+
+  팀, 비노컬, 비쥬얼 노벨, 소설, 보컬로이드, 하츠네, 미쿠, 보카로, 일본, 교차, 문화, 컬쳐, 연구, 연구소">
+	<!-- for mobile parse -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="VJC Labo">
+	<meta property="og:description" content="VJC Lab mmd Show Case Website">
+	<meta property="og:url" content="https://jomin398.github.io/">
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:site_name" content="보컬로이드, 비쥬얼 노벨 문화를 연구하는 연구소 VJC Lab 입니다." />
+	<meta property="og:image" content="./images/logo.png">
+
+	<title>VJC Laboratory</title>
+	<link rel="shortcut icon" href="./images/01.racy1.jpg" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<link rel="stylesheet" href="./css/preloader.css">
+	<link rel="stylesheet" href="./css/mein.css">
+	<link rel="stylesheet" href="css/g_footer.css">
+	<link rel="stylesheet" href="./css/balloon.css">
+	<link rel="stylesheet" href="./css/top.css">
+	<link rel="stylesheet" href="./css/bat.css">
+	<link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 500px)"
+		href="./css/mobilePortraitMein.css">
+	<link rel="stylesheet" media="screen and (min-width: 501px)" href="./css/pcMein.css">
+	<link rel="stylesheet" media="screen and (min-width: 501px)" href="./css/pcTop.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/lyswhut/lrc-file-parser@master/dist/lrc-file-parser.js"></script>
+    <!-- <script src="./src/lrc-file-parser/dist/lrc-file-parser.js"></script> -->
+	<script type="text/javascript" src="./src/loader.js"></script>
+	<script src="./src/devDefender.js"></script>
+	<script src="./src/chrData.js"></script>
+	<script src="./src/mmdInit.js"></script>
+	<script src="./src/chrFn.js"></script>
+	<!-- <script src="./src/bms.js" type="text/javascript" charset="utf-8"></script> -->
+	<script src="./src/index.js"></script>
+	<script src="./src/chrVoicePlayer.js"></script>
+</head>
+
+<body>
+	<div id="LoaderOverlay">
+		<div id="LoaderSlide"></div>
+		<div id="LoaderLoader">
+			<div id="LoaderBar"></div>
+			<div id="LoaderButton">Start!</div>
+		</div>
+	</div>
+	<div id="info"></div>
+	<header class="mein-header" id="Topnav" style="display: none;">
+		<ul class="menu">
+			<li><a class="mein_text" href="#home">初音ミク</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="#about">About</a></li>
+			<!-- <li>
+				<a class="batteryContainer" data-use-internal-bms="false" href="javascript:void(0);">
+					<div class="batteryOuter">
+						<div id="batteryLevel"></div>
+					</div>
+					<div class="batteryBump"></div>
+					<div class="batteryLevel text">[data Loading]</div>
+				</a>
+			</li> -->
+			<li>
+				<a href="javascript:void(0);" class="icon">
+					<i class="fa fa-bars"></i>
+				</a>
+			</li>
+		</ul>
+	</header>
+	<div id="setup"></div>
+	<div id="masthead" style="display: none;">
+		<div id="masthead-content" style="display: block;">
+			<div id="character-detail">
+				<div class="content character-detail">
+					<div class="content-title">
+					</div>
+					<img alt="" class="character-detail__body">
+				</div>
+				<div class="modal-btn modal-btn--prev"><i class="fas fa-chevron-left"></i></div>
+				<div class="modal-btn modal-btn--next"><i class="fas fa-chevron-right"></i></div>
+			</div>
+		</div>
+		<div id="banners"></div>
+	</div>
+	<footer id="global-footer" style="display: none;" class="fadeIn">
+		<nav class="contact">
+			<a id="EULA" href="#EULA">EULA</a>
+			<a id="Policy" href="#policy-privacy" style="margin-right:-7px;">Policy-privacy</a>
+		</nav>
+		</div>
+		<div class="copyright">
+			<p>© VJC Lab, Tm. / © GitHub, Inc.</p>
+			<p>© <a href="https://piapro.jp/">Piapro.</a> / <a href="https://www.crypton.co.jp/">Crypton Future
+					Media</a>, Inc. licensed under <a href="https://piapro.jp/license/pcl/summary">PIAPRO Charactor
+					License.</a></p>
+			<p>Contact webmaster for more information.</p>
+		</div>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/js/libs/ammo.wasm.js"></script>
+	<script type="module">
+		// see also https://github.com/zhigangjiang/WebGLMMD/blob/master/js/main.js
+		import * as THREE from 'https://cdn.skypack.dev/three@v0.131.3';
+		import Stats from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/libs/stats.module.js';
+		import {
+			GUI
+		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/libs/dat.gui.module.js';
+		import {
+			OutlineEffect
+		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/effects/OutlineEffect.js'; // './jsm/effects/OutlineEffect.js';
+		import {
+			MMDLoader
+		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/loaders/MMDLoader.js'; // './jsm/loaders/MMDLoader.js';
+		import {
+			MMDAnimationHelper
+		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/animation/MMDAnimationHelper.js'; //'./jsm/animation/MMDAnimationHelper.js';
+		import {
+			OrbitControls
+		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/controls/OrbitControls.js';
+		import {
+			Sky
+		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/objects/Sky.js';
+		import { Reflector } from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/objects/Reflector.js';
+
+		var container, stats;
+		var scene, renderer, camera;
+		var mesh, effect;
+		var directionalLight, spotLight;
+		var loader, helper, ikHelper, physicsHelper, listener;
+		var mouseX = 0,
+			mouseY = 0;
+		var windowHalfX = window.innerWidth / 2;
+		var windowHalfY = window.innerHeight / 2;
+		var clock = new THREE.Clock();
+		var ready = false;
+		//------------------------------------------------------
+		var sky, sunSphere;
+		var palaneSize = 20;
+		var mirrorPixelRatio = 2;
+		var isShowCase = false;
+
+		const effectControllerSky = {
+			/*distanceSky: 400000,*/
+			distanceSky: 50000,
+			scale: 450000,
+			turbidity: 10,
+			rayleigh: 3,
+			mieCoefficient: 0.005,
+			mieDirectionalG: 0.7,
+			elevation: 2,
+			azimuth: 180,
+			exposure: 1,
+			sun: ! true,
+			skyReset: function () {
+				effectControllerSky.distanceSky = 50000;
+				effectControllerSky.scale = 450000;
+				effectControllerSky.turbidity = 10;
+				effectControllerSky.rayleigh = 3;
+				effectControllerSky.mieCoefficient = 0.005;
+				effectControllerSky.mieDirectionalG = 0.7;
+				effectControllerSky.elevation = 2;
+				effectControllerSky.azimuth = 180;
+				effectControllerSky.exposure = 1;
+				effectControllerSky.directionalLight.pos.x = -1;
+				effectControllerSky.directionalLight.pos.y = 1;
+				effectControllerSky.directionalLight.pos.z = 1;
+				guiSkyChanged();
+				onShadowPosChange();
+			},
+			directionalLight: {
+				pos: {
+					x: -1,
+					y: 1,
+					z: 1
+				},
+				reset: function () {
+					effectControllerSky.directionalLight.pos.x = -1;
+					effectControllerSky.directionalLight.pos.y = 1;
+					effectControllerSky.directionalLight.pos.z = 1;
+					onShadowPosChange();
+				}
+			},
+			spotLight: {
+				pos: {
+					x: 5,
+					y: 30,
+					z: 15
+				},
+				angle: 0.8,
+				intensity: 0.25,
+				penumbra: 0.8,
+				bias: -0.001,
+				reset: function () {
+					effectControllerSky.spotLight.pos.x = 5;
+					effectControllerSky.spotLight.pos.y = 30;
+					effectControllerSky.spotLight.pos.z = 15;
+					effectControllerSky.spotLight.angle = 0.8;
+					effectControllerSky.spotLight.intensity = 0.25;
+					effectControllerSky.spotLight.penumbra = 0.8;
+					effectControllerSky.spotLight.bias = -0.001;
+					onLgPosChange()
+				}
+			}
+		};
+
+		const sceneManager = {
+			sky: null,
+			sunSphere: null,
+			plane: null,
+			helper: null
+		};
+		const guiChr = {
+			ani: true,
+			ik: true,
+			outline: true,
+			phy: true,
+			showIK: false,
+			showRigID: false,
+		}
+		const guiMein = {
+			sky: true,
+			fps: true,
+			phyR: function () {
+				helper.enable('physics', false);
+				setTimeout(() => {
+					helper.enable('physics', true);
+				}, 200);
+			},
+			plane: false,
+			infoDis: true,
+			fullScreenMode: false,
+			FloorMirror: function () {
+				sceneManager.helper.visible = false;
+				AddFloorMirror();
+			},
+			FloorNormal: function () {
+				sceneManager.helper.visible = false;
+				AddFloorNormal();
+			},
+			FloorRemove: function () {
+				if (sceneManager.plane) {
+					scene.remove(sceneManager.plane);
+				}
+				sceneManager.helper.visible = true;
+			}
+
+		};
+		//SceneGetObjectByName
+		function SGBN(str) {
+			return scene.getObjectByName(str);
+		}
+
+		function InitRenderer(isColorTranf) {
+			// scene
+			scene = new THREE.Scene();
+			scene.background = new THREE.Color(0xffffff);
+			if (isColorTranf) {
+				scene.background = null;
+			};
+			renderer = new THREE.WebGLRenderer({ antialias: true });
+			renderer.setPixelRatio(window.devicePixelRatio);
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.shadowMap.enabled = true;
+			// renderer.physicallyCorrectLights = true;
+
+			container = document.createElement('div');
+			let chrDisplay = document.querySelector('#masthead div div#character-detail div');
+			if (chrDisplay) {
+				chrDisplay.appendChild(container);
+			} else {
+				document.body.appendChild(container);
+			}
+
+			container.appendChild(renderer.domElement);
+		}
+
+		function AddCamera() {
+			camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
+			camera.position.z = 30;
+		};
+
+		function AddOrbitControl() {
+			const cameraControl = new OrbitControls(camera, renderer.domElement);
+			cameraControl.minDistance = 10;
+			cameraControl.maxDistance = 100;
+		};
+
+		function AddDirectionalLight(pos) {
+			if (SGBN("directionalLight")) {
+				scene.remove(SGBN("directionalLight"));
+			}
+			if (!pos) {
+				pos = [-10, 15, 20];
+			};
+			directionalLight = new THREE.DirectionalLight(0x887766);
+			directionalLight.position.set(pos[0], pos[1], pos[2])
+				.normalize(); // (-1, 1, 1)
+			// Shadow parameters
+			directionalLight.castShadow = true;
+			directionalLight.shadow.mapSize.x = 1024 * 2;
+			directionalLight.shadow.mapSize.y = 1024 * 2;
+			directionalLight.shadow.camera.right = 20;
+			directionalLight.shadow.camera.top = 30;
+			directionalLight.shadow.camera.left = -20;
+			directionalLight.shadow.camera.bottom = -20;
+			// Model specific Shadow parameters
+			directionalLight.shadow.bias = -0.001;
+			directionalLight.name = "directionalLight";
+			scene.add(directionalLight);
+		}
+
+		function AddAmbientLight() {
+			if (SGBN("ambientLight")) {
+				scene.remove(SGBN("ambientLight"));
+			}
+			var ambientLight = new THREE.AmbientLight(0x666666);
+			ambientLight.name = "ambientLight";
+			scene.add(ambientLight);
+			listener = new THREE.AudioListener();
+			camera.add(listener);
+			scene.add(camera);
+		}
+
+		function AddSpotLight() {
+			// lights
+			if (SGBN("spotLight")) scene.remove(SGBN("spotLight"));
+			spotLight = new THREE.SpotLight(0x223344);
+			let setup = effectControllerSky.spotLight;
+			let pos = setup.pos;
+			spotLight.position.set(pos[0], pos[1], pos[2]);
+			spotLight.angle = setup.angle;
+			spotLight.intensity = setup.intensity; //0.7;
+			spotLight.penumbra = setup.penumbra;
+			spotLight.castShadow = true;
+			// Model specific Shadow parameters
+			spotLight.shadow.bias = setup.bias;
+			spotLight.name = "spotLight";
+			scene.add(spotLight);
+			scene.add(spotLight.target);
+		}
+		function AddPolarGridHelper(isSongMode, fOffset) {
+			if (!fOffset) {
+				fOffset = [0, 0, 0];
+			}
+			if (SGBN("gridHelper")) { scene.remove(SGBN("gridHelper")) };
+			const gridHelper = new THREE.PolarGridHelper(30, 10);
+			gridHelper.name = "gridHelper";
+			sceneManager.helper = gridHelper;
+			if (!isSongMode) { gridHelper.position.y = -10; } else {
+				gridHelper.position.set(fOffset[0], fOffset[1], fOffset[2]);
+			}
+			scene.add(gridHelper);
+		}
+
+		function AddFloorMirror() {
+			if (scene.getObjectByName("plane"))
+				scene.remove(scene.getObjectByName("plane"));
+
+			var groundMirror = new Reflector(new THREE.PlaneGeometry(palaneSize * 10, palaneSize * 10), {
+				clipBias: 0.003,
+				textureWidth: window.innerWidth * window.devicePixelRatio,
+				textureHeight: window.innerHeight * window.devicePixelRatio,
+				color: 0x777777
+			});
+			//alert(window.innerWidth*2 * window.devicePixelRatio)
+			groundMirror.rotateX(- Math.PI / 2);
+			groundMirror.receiveShadow = true;
+			groundMirror.name = "plane";
+			sceneManager.plane = groundMirror;
+			scene.add(groundMirror);
+		}
+
+		function AddFloorNormal() {
+			//scene.background = new THREE.Color( 0x000000 ); 
+
+			if (scene.getObjectByName("plane"))
+				scene.remove(scene.getObjectByName("plane"));
+
+			var planeGeometry = new THREE.PlaneGeometry(palaneSize * 10, palaneSize * 10);
+			var planeMaterial = new THREE.MeshLambertMaterial({
+				color: 0xcccccc
+			});
+
+			var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+			plane.receiveShadow = true;
+
+			plane.rotation.x = -0.5 * Math.PI;
+			plane.position.y = 0;
+			plane.position.z = 0;
+			plane.name = "plane";
+
+			sceneManager.plane = plane;
+
+			scene.add(plane);
+		};
+		function initSky() {
+
+			// Add Sky Mesh
+			sky = new Sky();
+			sky.scale.setScalar(effectControllerSky.scale);
+			sky.name = "sky";
+			scene.add(sky);
+
+			// Add Sun Helper
+			sunSphere = new THREE.Vector3();
+
+			/// GUI
+			guiSkyChanged();
+		}
+
+		function guiSkyChanged() {
+			var uniforms = sky.material.uniforms;
+			uniforms.turbidity.value = effectControllerSky.turbidity;
+			uniforms.rayleigh.value = effectControllerSky.rayleigh;
+			//uniforms.luminance.value = effectControllerSky.luminance;
+			uniforms.mieCoefficient.value = effectControllerSky.mieCoefficient;
+			uniforms.mieDirectionalG.value = effectControllerSky.mieDirectionalG;
+
+			const phi = THREE.MathUtils.degToRad(90 - effectControllerSky.elevation);
+			const theta = THREE.MathUtils.degToRad(effectControllerSky.azimuth);
+			let disSky = effectControllerSky.distanceSky
+			sunSphere.setFromSphericalCoords(1 * disSky, phi * disSky, theta * disSky);
+			sunSphere.visible = effectControllerSky.sun;
+			renderer.toneMappingExposure = effectControllerSky.exposure;
+			uniforms.sunPosition.value.copy(sunSphere);
+			sky.visible = guiMein.sky;
+			renderer.render(scene, camera);
+		}
+
+		function AddStatsObject() {
+			stats = new Stats();
+			stats.setMode(0);
+
+			const fpsDisplay = document.createElement("div");
+			fpsDisplay.id = "fps";
+			fpsDisplay.appendChild(stats.dom);
+			document.body.appendChild(fpsDisplay);
+		}
+		function onProgress(xhr) {
+			onXhrLoadLog(xhr);
+		}
+
+		function errorhandller(xhr) {
+			var url = decodeURI(xhr.target.responseURL);
+			let fileName = url.substr(url.lastIndexOf("/") + 1)
+			console.log("로딩 실패" + "\n" + "로딩주소：" + fileName);
+		};
+
+		function guiMenuChanged() {
+			let t = document.querySelector("#character-detail > div.content.character-detail > div.content-title");
+			if (!t) { t = document.querySelector("#info") };
+			if (!guiMein.infoDis) {
+				t.style.display = "none";
+			} else if (guiMein.infoDis) {
+				// t.removeAttribute("style");
+				t.style.display = "block";
+			}
+			if (!guiMein.fps) {
+				document.getElementById('fps')
+					.style.display = 'none';
+			} else {
+				document.getElementById('fps')
+					.style.display = 'block';
+			}
+			helper.enable('animation', guiChr.ani);
+			helper.enable('ik', guiChr.ik);
+			helper.enable('physics', guiChr.phy);
+			// helper.afterglow = guiChr.afterglow;
+			effect.enabled = guiChr.outline;
+			if (physicsHelper !== undefined) { physicsHelper.visible = guiChr.showRigID };
+
+		}
+		function onShadowPosChange() {
+			directionalLight.position.set(effectControllerSky.directionalLight.pos.x, effectControllerSky.directionalLight.pos.y, effectControllerSky.directionalLight.pos.z)
+				.normalize(); // (-1, 1, 1)
+		}
+		function onLgPosChange() {
+			spotLight.position.set(effectControllerSky.spotLight.pos.x, effectControllerSky.spotLight.pos.y, effectControllerSky.spotLight.pos.z)
+				.normalize(); // (-1, 1, 1)
+		}
+		function addSkyControllerGui(gui) {
+			let textDB = Textlocal.setup.bkSky[!isKor ? 0 : 1];
+			const bkSky = gui.addFolder(textDB[0]);
+			bkSky.add(effectControllerSky, 'distanceSky', 0.0, 1000000, 10000).name(textDB[1]).onChange(guiSkyChanged);
+			bkSky.add(effectControllerSky, 'scale', 0.0, 1000000, 10000).name(textDB[2]).onChange(guiSkyChanged);
+			bkSky.add(effectControllerSky, 'turbidity', 0.0, 20.0, 0.1).name(textDB[3]).onChange(guiSkyChanged);
+			bkSky.add(effectControllerSky, 'rayleigh', 0.0, 10, 0.001).name(textDB[4]).onChange(guiSkyChanged);
+			bkSky.add(effectControllerSky, 'mieCoefficient', 0.0, 0.1, 0.001).name(textDB[5]).onChange(guiSkyChanged);
+			bkSky.add(effectControllerSky, 'mieDirectionalG', 0.0, 1, 0.001).name(textDB[6]).onChange(guiSkyChanged);
+			bkSky.add(effectControllerSky, 'azimuth', -180, 180, 0.1).name(textDB[7]).onChange(guiSkyChanged);
+			bkSky.add(effectControllerSky, 'exposure', 0, 1, 0.0001).name(textDB[8]).onChange(guiSkyChanged);
+			bkSky.add(effectControllerSky, 'skyReset').name(textDB[9]);
+			const shadow = bkSky.addFolder(textDB[10]);
+			//directionalLight
+
+			shadow.add(effectControllerSky.directionalLight.pos, 'x', -10, 10, 1).onChange(onShadowPosChange);
+			shadow.add(effectControllerSky.directionalLight.pos, 'y', -10, 10, 1).onChange(onShadowPosChange);
+			shadow.add(effectControllerSky.directionalLight.pos, 'z', -10, 10, 1).onChange(onShadowPosChange);
+			shadow.add(effectControllerSky.directionalLight, 'reset').name(textDB[11]);
+			textDB = Textlocal.setup.spotLight[!isKor ? 0 : 1];
+			const supportLg = bkSky.addFolder(textDB[0]);
+			supportLg.add(effectControllerSky.spotLight, 'angle', -180, 180, 0.1).name(textDB[2])
+			supportLg.add(effectControllerSky.spotLight, 'intensity', -100, 100, 0.01).name(textDB[3])
+			supportLg.add(effectControllerSky.spotLight, 'penumbra', -100, 100, 0.1).name(textDB[4])
+			supportLg.add(effectControllerSky.spotLight, 'bias', -100, 100, 0.001).name(textDB[5])
+			supportLg.add(effectControllerSky.spotLight, 'reset').name(textDB[6]);
+			const supportLgPos = supportLg.addFolder(textDB[1]);
+
+			supportLgPos.add(effectControllerSky.spotLight.pos, 'x', -50, 50, 1).onChange(onLgPosChange);
+			supportLgPos.add(effectControllerSky.spotLight.pos, 'y', -50, 50, 1).onChange(onLgPosChange);
+			supportLgPos.add(effectControllerSky.spotLight.pos, 'z', -50, 50, 1).onChange(onLgPosChange);
+
+		}
+		function addChrControllerGui(gui) {
+			let textDB = Textlocal.setup.chrgui[!isKor ? 0 : 1];
+			const chrgui = gui.addFolder(textDB[0]);
+			chrgui.add(guiChr, 'ani').name(textDB[1]).onChange(function () {
+				helper.enable('animation', guiChr.ani);
+			});
+			chrgui.add(guiChr, 'ik').name(textDB[2]).onChange(function () {
+				helper.enable('ik', guiChr.ik);
+			});
+			chrgui.add(guiChr, 'outline').name(textDB[3]).onChange(function () {
+				effect.enabled = guiChr.outline;
+			});
+			chrgui.add(guiChr, 'phy').name(textDB[4]).onChange(function () {
+				helper.enable('physics', guiChr.phy);
+			});
+			chrgui.add(guiChr, 'showIK').name(textDB[5]).onChange(function () {
+				ikHelper.visible = guiChr.showIK;
+			});
+			chrgui.add(guiChr, 'showRigID').name(textDB[6]).onChange(function () {
+				if (physicsHelper !== undefined) physicsHelper.visible = guiChr.showRigID;
+			});
+		}
+		function addFloorSetupGui(gui) {
+			let textDB = Textlocal.setup.floor[!isKor ? 0 : 1];
+			const FloorGui = gui.addFolder(textDB[0]);
+			FloorGui.add(guiMein, 'FloorMirror').name(textDB[1]);
+			FloorGui.add(guiMein, 'FloorNormal').name(textDB[2]);
+			FloorGui.add(guiMein, 'FloorRemove').name(textDB[3]);
+		}
+		function initGui() {
+			const gui = new GUI();
+			// sky gui
+			addSkyControllerGui(gui);
+			// chr gui
+			addChrControllerGui(gui);
+			addFloorSetupGui(gui);
+			let textDB = Textlocal.setup.guiMein[!isKor ? 0 : 1];
+			gui.add(guiMein, 'fps').name(textDB[0]).onChange(guiMenuChanged);
+			gui.add(guiMein, 'infoDis').name(textDB[1]).onChange(guiMenuChanged);
+			gui.add(guiMein, 'fullScreenMode').name(textDB[3]).onFinishChange(
+				function (value) {
+					if (value) requestFullScreen();
+					else exitFullscreen();
+				}
+			);
+			gui.add(guiMein, 'phyR').name(textDB[2]);
+
+
+		}
+		function addStopbtn() {
+			const stpb = document.createElement('div');
+			stpb.className = 'overlay';
+			stpb.id = 'stopButton';
+			stpb.style.display = 'block';
+			let btn = document.createElement('button');
+			btn.id = 'stopButton';
+			btn.innerText = 'Stop';
+			btn.addEventListener('click', function () {
+				location.reload();
+			});
+			stpb.appendChild(btn);
+			document.getElementById('info').insertAdjacentElement('afterend', stpb);
+		}
+		function addStageFile(stagePath) {
+			console.log('loading :', stagePath)
+			loader.load(stagePath, function (mesh) {
+				mesh.position.y = -10;
+				mesh.castShadow = true;
+				mesh.receiveShadow = true;
+				scene.add(mesh);
+			}, onProgress, null);
+		}
+		function mmdModelInit(mmdPath, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay) {
+			loader = new MMDLoader();
+			helper = new MMDAnimationHelper({
+				afterglow: 2.0
+			});
+
+			if (!chrOffset) {
+				chrOffset = [0, 0, 0];
+			}
+			loader.loadWithAnimation(mmdPath, vmdPath, function (mmd) {
+				mesh = mmd.mesh;
+				mesh.position.set(chrOffset[0], chrOffset[1], chrOffset[2]);
+				if (!songPath) {
+					mesh.position.y = -10;
+				}
+				mesh.castShadow = true;
+				mesh.receiveShadow = true;
+				scene.add(mesh);
+				console.log(motionDelay);
+				helper.add(mesh, {
+					animation: mmd.animation,
+					physics: true,
+					delayTime: motionDelay
+				});
+
+				//add ikHelper
+				ikHelper = helper.objects.get(mesh)
+					.ikSolver.createHelper();
+				ikHelper.visible = false;
+				scene.add(ikHelper);
+				//add physic helper
+				physicsHelper = helper.objects.get(mesh)
+					.physics.createHelper();
+				physicsHelper.visible = false;
+				scene.add(physicsHelper);
+				if (camPath) {
+					loader.loadAnimation(camPath, camera, function (cameraAnimation) {
+						helper.add(camera, {
+							animation: cameraAnimation,
+							delayTime: motionDelay
+						});
+						if (songPath) {
+							new THREE.AudioLoader().load(songPath, function (buffer) {
+								console.log(songDelay)
+								const audio = new THREE.Audio(listener).setBuffer(buffer);
+								const audioParams = {
+									delayTime: songDelay
+								};
+								let pg = document.createElement("progress");
+								let pgn = document.createElement('a');
+								pgn.id = 'songDurarion';
+								pgn.append(document.createTextNode("Playing... : "));
+								console.log(audio);
+								let audioCurrentTime = audio.context.currentTime;
+								let audioDuration = audio.buffer.duration + 8;
+								let t = null;
+								pgn.appendChild(pg);
+								document.getElementById("info").append(document.createElement('br'), pgn);
+								console.log("timerRunning");
+								pg.value = 0;
+								pg.max = audioDuration;
+								t = setInterval(() => {
+									audioCurrentTime = audio.context.currentTime;
+									if (audioCurrentTime >= audioDuration) {
+										console.log('end song');
+										clearInterval(t);
+										location.reload();
+									}
+									pg.value = Math.floor(audioCurrentTime);
+
+								}, 1000);
+								helper.add(audio, audioParams);
+								scene.add(mesh);
+								ready = true;
+							}, onProgress, null);
+						}
+
+					}, onProgress, null);
+				};
+			}, onProgress, null);
+		}
+		function init(mmdPath, isColorTranf, cFN, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay, db, stage) {
+			if (!mmdPath) {
+				mmdPath = "Tda式初音ミクV4X_Ver1.00/Tda式初音ミクV4X_Ver1.00.pmx";
+			}
+			if (!vmdPath) {
+				vmdPath = ['./assets/exVmds/realistic standing/Realistic Standing.vmd'];
+			}
+			if (!motionDelay) {
+				motionDelay = 0;
+			}
+			if (!songPath) {
+				isShowCase = true;
+			}
+			console.log(motionDelay)
+			// make rendering display.
+			// scene
+			InitRenderer(isColorTranf);
+			AddCamera();
+			if (isShowCase) {
+				AddOrbitControl();
+			}
+			AddAmbientLight();
+			AddSpotLight();
+			AddDirectionalLight([-1, 1, 1])
+			initSky();
+			//floor
+			AddPolarGridHelper(isShowCase ? false : true);
+			// STATS
+			AddStatsObject();
+			effect = new OutlineEffect(renderer);
+			// const listener = new THREE.AudioListener();
+			// camera.add(listener);
+			// scene.add(camera);
+
+			// model
+			function onProgress(xhr) {
+				onXhrLoadLog(xhr);
+			}
+
+			const modelFile = './assets/models/mmd/' + mmdPath;
+			console.log(modelFile);
+			const vmdFiles = vmdPath;
+			const cameraFiles = camPath;
+			const audioFile = songPath;
+			console.log(audioFile)
+
+			document.querySelector("div#info").style.display = "block";
+			mmdModelInit(modelFile, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay);
+			// console.log(stage);
+			// if (stage) {
+			// 	console.log(stage);
+			// 	if (songPath) {
+			// 	addStageFile(db.mmd.stagePath)
+			// 	}
+			// }
+			initGui();
+			if (cFN) {
+				cFN();
+				setGUIFUNC = null;
+			}
+			if (!isShowCase) {
+				displaySongInfo(db);
+				addStopbtn();
+			}
+			window.addEventListener('resize', onWindowResize);
+		}
+
+		function requestFullScreen() {
+			var de = document.documentElement;
+			if (de.requestFullscreen) {
+				de.requestFullscreen();
+			} else if (de.mozRequestFullScreen) {
+				de.mozRequestFullScreen();
+			} else if (de.webkitRequestFullScreen) {
+				de.webkitRequestFullScreen();
+			}
+		}
+		function exitFullscreen() {
+			var de = document;
+			if (de.exitFullscreen) {
+				de.exitFullscreen();
+			} else if (de.mozCancelFullScreen) {
+				de.mozCancelFullScreen();
+			} else if (de.webkitCancelFullScreen) {
+				de.webkitCancelFullScreen();
+			}
+		}
+		function isFullscreen() {
+			var de = document;
+			var fullscreenElement =
+				de.fullscreenEnabled
+				|| de.mozFullscreenElement
+				|| de.webkitFullscreenElement;
+			var fullscreenEnabled =
+				de.fullscreenEnabled
+				|| de.mozFullscreenEnabled
+				|| de.webkitFullscreenEnabled;
+			if (fullscreenElement == null) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+
+		function onWindowResize() {
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			effect.setSize(window.innerWidth, window.innerHeight);
+		}
+		//
+		function render() {
+			if (isShowCase) {
+				ready = true;
+			}
+			if (ready) {
+				helper.update(clock.getDelta());
+			}
+			effect.render(scene, camera);
+		}
+
+		function animate() {
+			requestAnimationFrame(animate);
+			stats.begin();
+			render();
+			stats.end();
+		}
+		window.guiModule = () => new GUI();
+		window.readyComp = function (mmdPath, isColorTranf, cFN, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay, stage) {
+			let db = mmdPath;
+			if (typeof mmdPath == 'object') {
+				console.log(db)
+				//mmd
+				vmdPath = db.mmd.vmdPath;
+				camPath = db.mmd.camPath;
+				songPath = db.songData.songPath;
+				chrOffset = db.mmd.chrOffset;
+				songDelay = db.mmd.songDelay;
+				motionDelay = db.mmd.motionDelay;
+				mmdPath = db.mmd.chrModel;
+				stage = db.mmd.stagePath;
+			}
+
+			console.log("Model", "onLoad");
+			Ammo()
+				.then(function () {
+					init(mmdPath, isColorTranf, cFN, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay, db, stage);
+					animate();
+				});
+		};
+	</script>
+	<script src="./src/renderer.js"></script>
+</body>
+
+</html>

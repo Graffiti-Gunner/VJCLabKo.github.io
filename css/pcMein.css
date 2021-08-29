@@ -1,0 +1,26 @@
+/* .mein-header ul li a, .dropdown label {
+  font-size: 17pt;
+} */
+
+#masthead {
+  position: relative;
+  min-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: black;
+  padding: 0;
+  border: 0;
+  /* font-size: 20px; */
+  vertical-align: baseline;
+}
+#masthead[data-type="mmd"] {
+  height: 1280px !important;
+}
+.modal-btn--prev,
+.modal-btn--next {
+  top: 50%;
+}
+
+.banners__item {
+  margin: 0 50px;
+}

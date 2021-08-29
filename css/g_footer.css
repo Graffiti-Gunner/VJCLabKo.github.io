@@ -1,0 +1,77 @@
+/*맨아래 설명칸*/
+#global-footer {
+    background: #39c5bb;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0;
+    height: 50%;
+    z-index: 0;
+    line-height: initial;
+}
+
+#global-footer nav.contact{
+    margin: 5px auto;
+    text-align: right;
+}
+#langSel{
+    text-align: right;
+}
+#global-footer #langSel button#langToENG {
+    font-size: 1rem;
+    text-align: center;
+    background: transparent;
+    border: 0;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+#global-footer nav.contact>a {
+    display: inline-block;
+    border-right: solid 1px #fff;
+    padding: 0 10px;
+    color: #fff;
+}
+
+#global-footer nav.contact>a:last-child {
+    border: 0;
+}
+
+#global-footer nav.contact>a:hover {
+    text-decoration: underline;
+}
+
+#global-footer .copyright {
+    width: 100%;
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.copyright p {
+    margin: 5px;
+}
+
+.copyright p a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#EULA,
+#Policy {
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+#githubLastCommit{
+    width: 100%;
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: right;
+    padding-right: 10px;
+    margin: 5px;
+}
