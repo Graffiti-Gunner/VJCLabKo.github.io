@@ -1,14 +1,12 @@
 # 初音ミク [Three-js](https://en.wikipedia.org/wiki/Three.js) Based MMD ShowCase Project Site
-初音ミク <s>Voiced Time and Battery Notification Service</s> [Three-js](https://en.wikipedia.org/wiki/Three.js) Based MMD ShowCase Project Site
+初音ミク [Three-js](https://en.wikipedia.org/wiki/Three.js) Based MMD ShowCase Project Site
 
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jomin398/jomin398.github.io?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/jomin398/jomin398.github.io?style=for-the-badge)
-![Site Host Status](https://img.shields.io/github/deployments/jomin398/jomin398.github.io/github-pages?style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/VJCLabKo/VJCLabKo.github.io?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/VJCLabKo/VJCLabKo.github.io?style=for-the-badge)
+![Site Host Status](https://img.shields.io/github/deployments/VJCLabKo/VJCLabKo.github.io/github-pages?style=for-the-badge)
 
-![SongFoldersCount](https://shields-staging.herokuapp.com/github/directory-file-count/jomin398/jomin398.github.io/assets/music?type=dir&style=for-the-badge&label=Songs
-)
-![LyricsCount](https://shields-staging.herokuapp.com/github/directory-file-count/jomin398/jomin398.github.io/assets/lyrics?type=file&style=for-the-badge&label=Lyrics
-)
+![SongFoldersCount](https://shields-staging.herokuapp.com/github/directory-file-count/VJCLabKo/VJCLabKo.github.io/assets/music?type=dir&style=for-the-badge&label=Songs)
+![LyricsCount](https://shields-staging.herokuapp.com/github/directory-file-count/VJCLabKo/VJCLabKo.github.io/assets/lyrics?type=file&style=for-the-badge&label=Lyrics)
 
 #### Rendering Engine
 ![three.js icon](https://img.shields.io/badge/three.js-black?style=for-the-badge&logo=Three.js) ,
