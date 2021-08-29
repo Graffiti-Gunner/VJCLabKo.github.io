@@ -54,8 +54,8 @@ const chrData = {
     songs: {
         "みんなみくみくにしてあげる": {
             "kor": {
-                "title": "모두 미쿠미쿠하게 해줄께(하게 할거야)♪",
-                "song": "/모두 미쿠미쿠하게 해줄께♪ (by sodadayo20).mp3",
+                "title": "모두 미쿠미쿠하게 해줄게(하게 할 거야)♪",
+                "song": "/모두 미쿠미쿠하게 해줄게♪ (by sodadayo20).mp3",
                 "vocalTranner": "sodadayo20"
             },
             "fname": "みんなみくみくにしてあげる",
