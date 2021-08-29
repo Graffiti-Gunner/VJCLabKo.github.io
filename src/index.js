@@ -366,7 +366,7 @@ function displaySongInfo(db) {
 }
 
 function getLastGitCommit() {
-  let url = 'https://api.github.com/repos/jomin398/jomin398.github.io/branches/master';
+  let url = 'https://api.github.com/repos/VJCLabKo/VJCLabKo.github.io/branches/master';
   let req = new XMLHttpRequest();
   let res = null;
   function display(s){
