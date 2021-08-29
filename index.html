@@ -109,27 +109,27 @@
 	<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/js/libs/ammo.wasm.js"></script>
 	<script type="module">
 		// see also https://github.com/zhigangjiang/WebGLMMD/blob/master/js/main.js
-		import * as THREE from 'https://cdn.skypack.dev/three@v0.131.3';
-		import Stats from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/libs/stats.module.js';
+		import * as THREE from 'https://cdn.skypack.dev/three';
+		import Stats from 'https://cdn.skypack.dev/three/examples/jsm/libs/stats.module.js';
 		import {
 			GUI
-		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/libs/dat.gui.module.js';
+		} from 'https://cdn.skypack.dev/three/examples/jsm/libs/dat.gui.module.js';
 		import {
 			OutlineEffect
-		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/effects/OutlineEffect.js'; // './jsm/effects/OutlineEffect.js';
+		} from 'https://cdn.skypack.dev/three/examples/jsm/effects/OutlineEffect.js'; // './jsm/effects/OutlineEffect.js';
 		import {
 			MMDLoader
-		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/loaders/MMDLoader.js'; // './jsm/loaders/MMDLoader.js';
+		} from 'https://cdn.skypack.dev/three/examples/jsm/loaders/MMDLoader.js'; // './jsm/loaders/MMDLoader.js';
 		import {
 			MMDAnimationHelper
-		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/animation/MMDAnimationHelper.js'; //'./jsm/animation/MMDAnimationHelper.js';
+		} from 'https://cdn.skypack.dev/three/examples/jsm/animation/MMDAnimationHelper.js'; //'./jsm/animation/MMDAnimationHelper.js';
 		import {
 			OrbitControls
-		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/controls/OrbitControls.js';
+		} from 'https://cdn.skypack.dev/three/examples/jsm/controls/OrbitControls.js';
 		import {
 			Sky
-		} from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/objects/Sky.js';
-		import { Reflector } from 'https://cdn.skypack.dev/three@v0.131.3/examples/jsm/objects/Reflector.js';
+		} from 'https://cdn.skypack.dev/three/examples/jsm/objects/Sky.js';
+		import { Reflector } from 'https://cdn.skypack.dev/three/examples/jsm/objects/Reflector.js';
 
 		var container, stats;
 		var scene, renderer, camera;
