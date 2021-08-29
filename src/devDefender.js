@@ -3,7 +3,12 @@ const devmode = {
     json: null
 }
 function consoleTextArtPrint(str) {
-    const css = ["font-family: 'Saitamaar', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;", "font-size: 12px;", "line-height: 12px;", "width: 100%;"];
+    const css = [
+        "font-family: 'Saitamaar', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;",
+        "font-size: 14px;",
+        "line-height: 18px;",
+        "width: 100%;"
+    ];
     console.log("%c%s", css.join(' '), (str ? str.join('\n') : null));
 }
 function devToolsOpened(e) {
