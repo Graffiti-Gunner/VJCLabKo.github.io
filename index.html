@@ -40,6 +40,7 @@
 	<script type="text/javascript" src="./src/loader.js"></script>
 	<script src="./src/devDefender.js"></script>
 	<script src="./src/chrData.js"></script>
+	<script src="./src/renderer.js"></script>
 	<script src="./src/mmdInit.js"></script>
 	<script src="./src/chrFn.js"></script>
 	<!-- <script src="./src/bms.js" type="text/javascript" charset="utf-8"></script> -->
@@ -135,7 +136,7 @@
 		var scene, renderer, camera;
 		var mesh, effect;
 		var directionalLight, spotLight;
-		var loader, helper, ikHelper, physicsHelper, listener;
+		var loader, helper, ikHelper, physicsHelper, listener, gridHelper;
 		var mouseX = 0,
 			mouseY = 0;
 		var windowHalfX = window.innerWidth / 2;
@@ -352,7 +353,7 @@
 				fOffset = [0, 0, 0];
 			}
 			if (SGBN("gridHelper")) { scene.remove(SGBN("gridHelper")) };
-			const gridHelper = new THREE.PolarGridHelper(30, 10);
+			gridHelper = new THREE.PolarGridHelper(30, 10);
 			gridHelper.name = "gridHelper";
 			sceneManager.helper = gridHelper;
 			if (!isSongMode) { gridHelper.position.y = -10; } else {
@@ -583,13 +584,15 @@
 			stpb.appendChild(btn);
 			document.getElementById('info').insertAdjacentElement('afterend', stpb);
 		}
-		function addStageFile(stagePath) {
-			console.log('loading :', stagePath)
-			loader.load(stagePath, function (mesh) {
-				mesh.position.y = -10;
-				mesh.castShadow = true;
-				mesh.receiveShadow = true;
-				scene.add(mesh);
+		function addStageFile(stage) {
+			console.log('loading :', stage.path);
+			loader = new MMDLoader();
+			loader.load(stage.path, function (mmd) {
+				if(stage.pos){
+					mmd.position.set(stage.pos[0],stage.pos[1],stage.pos[2])
+				}
+				console.log(mmd)
+				scene.add(mmd);
 			}, onProgress, null);
 		}
 		function mmdModelInit(mmdPath, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay) {
@@ -694,7 +697,6 @@
 			if (isShowCase) {
 				AddOrbitControl();
 			}
-			AddAmbientLight();
 			AddSpotLight();
 			AddDirectionalLight([-1, 1, 1])
 			initSky();
@@ -720,14 +722,17 @@
 			console.log(audioFile)
 
 			document.querySelector("div#info").style.display = "block";
+			//disable stageload....
+			console.log(stage);
+			if (stage) {
+				console.log(stage);
+				if (songPath) {
+					gridHelper.visible = false;
+				addStageFile(db.mmd.stage);
+				}
+			}
 			mmdModelInit(modelFile, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay);
-			// console.log(stage);
-			// if (stage) {
-			// 	console.log(stage);
-			// 	if (songPath) {
-			// 	addStageFile(db.mmd.stagePath)
-			// 	}
-			// }
+			AddAmbientLight();
 			initGui();
 			if (cFN) {
 				cFN();
@@ -812,7 +817,7 @@
 				songDelay = db.mmd.songDelay;
 				motionDelay = db.mmd.motionDelay;
 				mmdPath = db.mmd.chrModel;
-				stage = db.mmd.stagePath;
+				stage = db.mmd.stage;
 			}
 
 			console.log("Model", "onLoad");
@@ -823,7 +828,6 @@
 				});
 		};
 	</script>
-	<script src="./src/renderer.js"></script>
 </body>
 
 </html>

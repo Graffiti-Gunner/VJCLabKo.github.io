@@ -362,6 +362,11 @@ function displaySongInfo(db) {
     b.appendChild(document.createElement("br"));
     ca.innerText = "Camera : " + (db.mmd.camAuthor ? db.mmd.camAuthor : "[Unknown Author]");
     b.appendChild(ca);
+    if(db.mmd.stage){
+      let st = document.createElement("a");
+      st.innerText = "Stage : "+ db.mmd.stage.name + "(by "+db.mmd.stage.author+")";
+      b.append(document.createElement("br"),st);
+    }
   }
 }
 

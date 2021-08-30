@@ -85,6 +85,154 @@ const chrData = {
             "delayTime": 0,
             "lyricsPath": "/[初音ミク] Dear.lrc"
         },
+        "Ray": {
+            "kor": {
+                "song": "/[Miku] Ray (Kor ver by sodadayo20).mp3",
+                "vocalTranner": "sodadayo20"
+            },
+            "fname": "初音ミク - Ray",
+            "vmd": "/ray_motion_Tda式初音ミク_盗賊つばき流MトレースモデルSPv1.08_表示枠整理_足全表示_20201225_144828.vmd",
+            "cam": "/ray_Camera.vmd",
+            "song": "/[Miku] Ray (Jpn by sodadayo20).mp3",
+            "vmdAuthor": "팔성이",
+            "camAuthor": "Soell",
+            "vocalTranner": "sodadayo20 (ReCovered)",
+            "author": "BUMP OF CHICKEN",
+            "artist": "初音ミク",
+            "delayTime": 2.06,
+            "lyricsPath": "/[初音ミク] Ray.lrc",
+            "OVRMultiLineSetup": true
+        },
+        "Snow Fairy Story": {
+            "kor": {
+                "title": "눈꽃 요정의 이야기 (Snow Fairy Story)",
+                "song": "/[初音ミク] Snow Fairy Story (korean ver by sodadayo20).mp3",
+                "vocalTranner": "sodadayo20"
+            },
+            "fname": "Snow Fairy Story",
+            "vmd": "/Snow Fairy Story Motion by まいてぃ.vmd",
+            "cam": "/SnowFairyStory Camera by 永瀬律 (りつ).vmd",
+            "song": "/[初音ミク] Snow Fairy Story by 40mP.mp3",
+            "vmdAuthor": "まいてぃ",
+            "camAuthor": "永瀬律 (りつ)",
+            "vocalTranner": "40mp",
+            "author": "40mp",
+            "artist": "初音ミク",
+            "delayTime": 0
+        },
+        "チューリングラブ": {
+            "kor": {
+                "title": "튜링러브",
+                "author": "나유탄 성인, 나나오아카리"
+            },
+            "fname": "チューリングラブ",
+            "song": "/チューリングラブ feat.初音ミク(by sodadayo20).mp3",
+            "vocalTranner": "sodadayo20",
+            "author": "ナユタン星人, ナナヲアカリ",
+            "artist": "初音ミク",
+            "delayTime": 0,
+            "lyricsPath": "/[初音ミク] チューリングラブ.lrc"
+        },
+        "ツギハギスタッカート": {
+            "kor": {
+                "title": "누덕누덕 스타카토",
+                "song": "/[Miku] 누덕누덕 스타카토.mp3",
+                "vocalTranner": "sodadayo20"
+            },
+            "fname": "Patchwork_Staccato",
+            "vmd": "/PatchworkStaccato_motion.vmd",
+            "cam": "/Camera by MMD kip.vmd",
+            "song": "/pv_912.mp3",
+            "camAuthor": "kip",
+            "vocalTranner": "とあ (toa)",
+            "author": "とあ (toa)",
+            "artist": "初音ミク",
+            "delayTime": 0
+        },
+        "メルト": {
+            "kor": {
+                "title": "멜트",
+                "song": "/[Miku] Melt (korean by sodadayo20).mp3",
+                "vocalTranner": "sodadayo20",
+                "author": "세가 (SEGA)"
+            },
+            "fname": "Melt",
+            "vmd": "/mmd_Melt_motion.vmd",
+            "cam": "/MELT CAMERA.vmd",
+            "song": "/pv_005.mp3",
+            "vmdAuthor": "Sega",
+            "camAuthor": "Sega",
+            "vocalTranner": "ryo (Supercell)",
+            "author": "Sega",
+            "artist": "初音ミク",
+            "delayTime": 2
+        },
+        "千本桜": {
+            "kor": {
+                "title": "천본앵",
+                "song": "/[Miku] Senbonzakura (Korean by sodadayo20).mp3",
+                "vocalTranner": "sodadayo20"
+            },
+            "fname": "千本桜",
+            "vmd": "/motion data.vmd",
+            "cam": "/camera.vmd",
+            "song": "/[Miku] 千本桜 by 黒うさP.mp3",
+            "vocalTranner": "黒うさP",
+            "author": "黒うさP",
+            "artist": "初音ミク",
+            "delayTime": 0
+        },
+        "君色に染まる": {
+            "kor": {
+                "title": "너의 색으로 물들어",
+                "song": "/君色に染まる_Miku ver Kor.mp3"
+            },
+            "fname": "君色に染まる",
+            "vmd": "/modelBig.vmd",
+            "cam": "/camera.vmd",
+            "song": "/君色に染まる_Miku ver Kor.mp3",
+            "vmdAuthor": "足太ぺんたさん",
+            "camAuthor": "IcyFox",
+            "author": "TOKOTOKO (西沢さんP)",
+            "vocalTranner": "sodadayo20",
+            "artist": "初音ミク",
+            "delayTime": 0
+        },
+        "愛言葉Ⅲ": {
+            "kor": {
+                "title": "사랑의 말 3",
+                "song": "/[Miku] 愛言葉Ⅲ (Korean by sodadayo20).mp3",
+                "vocalTranner": "sodadayo20"
+            },
+            "fname": "愛言葉Ⅲ",
+            "vmd": "/愛言葉Ⅲ Motion by 足太ぺんたさん.vmd",
+            "cam": "/愛言葉Ⅲ Camera.vmd",
+            "song": "/[Miku] 愛言葉Ⅲ By DECO27.mp3",
+            "vmdAuthor": "足太ぺんたさん",
+            "camAuthor": "ろっく",
+            "vocalTranner": "DECO*27",
+            "author": "DECO*27",
+            "artist": "初音ミク",
+            "delayTime": 0
+        },
+        "金曜日のおはよう": {
+            "kor": {
+                "title": "금요일의 아침인사",
+                "song": "/[Miku] 금요일의 아침인사.mp3",
+                "vocalTranner": "sodadayo20"
+            },
+            "fname": "金曜日のおはよう",
+            "vmd": "/金曜日のおはようブレもーしょん.vmd",
+            "cam": "/金曜日のおはよう_160cm_Camera by manabu.vmd",
+            "song": "/金曜日のおはよう  another story ／HoneyWorks feat  成海聖奈CV 雨宮天.mp3",
+            "vmdAuthor": "ブレン坊",
+            "camAuthor": "manabu",
+            "vocalTranner": "成海聖奈 (CV.雨宮天)",
+            "author": "HoneyWorks",
+            "artist": "初音ミク",
+            "delayTime": 0,
+            "lyricsPath": "/[HoneyWorks] 金曜日のおはよう.lrc"
+        },
         "Glass Bead": {
             "notInSongList": true,
             "kor": {
@@ -170,24 +318,6 @@ const chrData = {
             "delayTime": 0,
             "lyricsPath": "/[初音ミク] Packaged.lrc"
         },
-        "Ray": {
-            "kor": {
-                "song": "/[Miku] Ray (Kor ver by sodadayo20).mp3",
-                "vocalTranner": "sodadayo20"
-            },
-            "fname": "初音ミク - Ray",
-            "vmd": "/ray_motion_Tda式初音ミク_盗賊つばき流MトレースモデルSPv1.08_表示枠整理_足全表示_20201225_144828.vmd",
-            "cam": "/ray_Camera.vmd",
-            "song": "/[Miku] Ray (Jpn by sodadayo20).mp3",
-            "vmdAuthor": "팔성이",
-            "camAuthor": "Soell",
-            "vocalTranner": "sodadayo20 (ReCovered)",
-            "author": "BUMP OF CHICKEN",
-            "artist": "初音ミク",
-            "delayTime": 2.06,
-            "lyricsPath": "/[初音ミク] Ray.lrc",
-            "OVRMultiLineSetup": true
-        },
         "Roly poly": {
             "notInSongList": true,
             "kor": {
@@ -216,23 +346,6 @@ const chrData = {
             "artist": "GFRIEND",
             "delayTime": 0,
             "lyricsPath": "/[GFRIEND] Rough.lrc"
-        },
-        "Snow Fairy Story": {
-            "kor": {
-                "title": "눈꽃 요정의 이야기 (Snow Fairy Story)",
-                "song": "/[初音ミク] Snow Fairy Story (korean ver by sodadayo20).mp3",
-                "vocalTranner": "sodadayo20"
-            },
-            "fname": "Snow Fairy Story",
-            "vmd": "/Snow Fairy Story Motion by まいてぃ.vmd",
-            "cam": "/SnowFairyStory Camera by 永瀬律 (りつ).vmd",
-            "song": "/[初音ミク] Snow Fairy Story by 40mP.mp3",
-            "vmdAuthor": "まいてぃ",
-            "camAuthor": "永瀬律 (りつ)",
-            "vocalTranner": "40mp",
-            "author": "40mp",
-            "artist": "初音ミク",
-            "delayTime": 0
         },
         "Snow Halation": {
             "kor": {
@@ -329,53 +442,6 @@ const chrData = {
             "delayTime": 0,
             "lyricsPath": "/[初音ミク] サウンド.lrc"
         },
-        "チューリングラブ": {
-            "kor": {
-                "title": "튜링러브",
-                "author": "나유탄 성인, 나나오아카리"
-            },
-            "fname": "チューリングラブ",
-            "song": "/チューリングラブ feat.初音ミク(by sodadayo20).mp3",
-            "vocalTranner": "sodadayo20",
-            "author": "ナユタン星人, ナナヲアカリ",
-            "artist": "初音ミク",
-            "delayTime": 0,
-            "lyricsPath": "/[初音ミク] チューリングラブ.lrc"
-        },
-        "ツギハギスタッカート": {
-            "kor": {
-                "title": "누덕누덕 스타카토",
-                "song": "/[Miku] 누덕누덕 스타카토.mp3",
-                "vocalTranner": "sodadayo20"
-            },
-            "fname": "Patchwork_Staccato",
-            "vmd": "/PatchworkStaccato_motion.vmd",
-            "cam": "/Camera by MMD kip.vmd",
-            "song": "/pv_912.mp3",
-            "camAuthor": "kip",
-            "vocalTranner": "とあ (toa)",
-            "author": "とあ (toa)",
-            "artist": "初音ミク",
-            "delayTime": 0
-        },
-        "メルト": {
-            "kor": {
-                "title": "멜트",
-                "song": "/[Miku] Melt (korean by sodadayo20).mp3",
-                "vocalTranner": "sodadayo20",
-                "author": "세가 (SEGA)"
-            },
-            "fname": "Melt",
-            "vmd": "/mmd_Melt_motion.vmd",
-            "cam": "/MELT CAMERA.vmd",
-            "song": "/pv_005.mp3",
-            "vmdAuthor": "Sega",
-            "camAuthor": "Sega",
-            "vocalTranner": "ryo (Supercell)",
-            "author": "Sega",
-            "artist": "初音ミク",
-            "delayTime": 2
-        },
         "ワールドイズマイン": {
             "kor": {
                 "title": "이 새상은 내꺼! (World is Mine)",
@@ -403,54 +469,6 @@ const chrData = {
             "lyricsPath": "/[初音ミク] 勘違い性反希望症.lrc",
             "delayTime": 0
         },
-        "千本桜": {
-            "kor": {
-                "title": "천본앵",
-                "song": "/[Miku] Senbonzakura (Korean by sodadayo20).mp3",
-                "vocalTranner": "sodadayo20"
-            },
-            "fname": "千本桜",
-            "vmd": "/motion data.vmd",
-            "cam": "/camera.vmd",
-            "song": "/[Miku] 千本桜 by 黒うさP.mp3",
-            "vocalTranner": "黒うさP",
-            "author": "黒うさP",
-            "artist": "初音ミク",
-            "delayTime": 0
-        },
-        "君色に染まる": {
-            "kor": {
-                "title": "너의 색으로 물들어",
-                "song": "/君色に染まる_Miku ver Kor.mp3"
-            },
-            "fname": "君色に染まる",
-            "vmd": "/modelBig.vmd",
-            "cam": "/camera.vmd",
-            "song": "/君色に染まる_Miku ver Kor.mp3",
-            "vmdAuthor": "足太ぺんたさん",
-            "camAuthor": "IcyFox",
-            "author": "TOKOTOKO (西沢さんP)",
-            "vocalTranner": "sodadayo20",
-            "artist": "初音ミク",
-            "delayTime": 0
-        },
-        "愛言葉Ⅲ": {
-            "kor": {
-                "title": "사랑의 말 3",
-                "song": "/[Miku] 愛言葉Ⅲ (Korean by sodadayo20).mp3",
-                "vocalTranner": "sodadayo20"
-            },
-            "fname": "愛言葉Ⅲ",
-            "vmd": "/愛言葉Ⅲ Motion by 足太ぺんたさん.vmd",
-            "cam": "/愛言葉Ⅲ Camera.vmd",
-            "song": "/[Miku] 愛言葉Ⅲ By DECO27.mp3",
-            "vmdAuthor": "足太ぺんたさん",
-            "camAuthor": "ろっく",
-            "vocalTranner": "DECO*27",
-            "author": "DECO*27",
-            "artist": "初音ミク",
-            "delayTime": 0
-        },
         "桜ノ雨": {
             "kor": {
                 "title": "벚꽃의 비",
@@ -468,24 +486,6 @@ const chrData = {
             "artist": "初音ミク",
             "delayTime": 0,
             "lyricsPath": "/[初音ミク] 桜ノ雨.lrc"
-        },
-        "金曜日のおはよう": {
-            "kor": {
-                "title": "금요일의 아침인사",
-                "song": "/[Miku] 금요일의 아침인사.mp3",
-                "vocalTranner": "sodadayo20"
-            },
-            "fname": "金曜日のおはよう",
-            "vmd": "/金曜日のおはようブレもーしょん.vmd",
-            "cam": "/金曜日のおはよう_160cm_Camera by manabu.vmd",
-            "song": "/金曜日のおはよう  another story ／HoneyWorks feat  成海聖奈CV 雨宮天.mp3",
-            "vmdAuthor": "ブレン坊",
-            "camAuthor": "manabu",
-            "vocalTranner": "成海聖奈 (CV.雨宮天)",
-            "author": "HoneyWorks",
-            "artist": "初音ミク",
-            "delayTime": 0,
-            "lyricsPath": "/[HoneyWorks] 金曜日のおはよう.lrc"
         }
     },
     chrs: [
@@ -599,6 +599,14 @@ const chrData = {
                     Author: "TDA"
                 }
             },
+        }
+    ],
+    stages: [
+        {
+            name: 'PDFT Sakura no ame Stage',
+            author: 'dan1024 dduerta',
+            path: './assets/models/stage/PDFT Sakura no ame Stage/stage4.pmx',
+            pos: [0, 0, 0]
         }
     ]
 }
