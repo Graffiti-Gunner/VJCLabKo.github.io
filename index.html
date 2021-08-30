@@ -550,13 +550,15 @@
 			FloorGui.add(guiMein, 'FloorNormal').name(textDB[2]);
 			FloorGui.add(guiMein, 'FloorRemove').name(textDB[3]);
 		}
-		function initGui() {
+		function initGui(stage) {
 			const gui = new GUI();
 			// sky gui
 			addSkyControllerGui(gui);
 			// chr gui
 			addChrControllerGui(gui);
-			addFloorSetupGui(gui);
+			if(stage == null){
+				addFloorSetupGui(gui);
+			}
 			let textDB = Textlocal.setup.guiMein[!isKor ? 0 : 1];
 			gui.add(guiMein, 'fps').name(textDB[0]).onChange(guiMenuChanged);
 			gui.add(guiMein, 'infoDis').name(textDB[1]).onChange(guiMenuChanged);
@@ -595,7 +597,7 @@
 				scene.add(mmd);
 			}, onProgress, null);
 		}
-		function mmdModelInit(mmdPath, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay) {
+		function mmdModelInit(mmdPath, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay,db) {
 			loader = new MMDLoader();
 			helper = new MMDAnimationHelper({
 				afterglow: 2.0
@@ -624,6 +626,12 @@
 				ikHelper = helper.objects.get(mesh)
 					.ikSolver.createHelper();
 				ikHelper.visible = false;
+				//isIKDisable?
+				if(db.mmd.ikSetup){
+					console.log(db.mmd.ikSetup);
+					guiChr.ik = false;
+					helper.enable('ik', false);
+				}
 				scene.add(ikHelper);
 				//add physic helper
 				physicsHelper = helper.objects.get(mesh)
@@ -731,9 +739,9 @@
 				addStageFile(db.mmd.stage);
 				}
 			}
-			mmdModelInit(modelFile, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay);
+			mmdModelInit(modelFile, vmdPath, camPath, songPath, chrOffset, songDelay, motionDelay,db);
 			AddAmbientLight();
-			initGui();
+			initGui(stage);
 			if (cFN) {
 				cFN();
 				setGUIFUNC = null;

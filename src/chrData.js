@@ -91,7 +91,7 @@ const chrData = {
                 "vocalTranner": "sodadayo20"
             },
             "fname": "初音ミク - Ray",
-            "vmd": "/ray_motion_Tda式初音ミク_盗賊つばき流MトレースモデルSPv1.08_表示枠整理_足全表示_20201225_144828.vmd",
+            "vmd": "/ray_motion (and face).vmd",
             "cam": "/ray_Camera.vmd",
             "song": "/[Miku] Ray (Jpn by sodadayo20).mp3",
             "vmdAuthor": "팔성이",
@@ -101,6 +101,7 @@ const chrData = {
             "artist": "初音ミク",
             "delayTime": 2.06,
             "lyricsPath": "/[初音ミク] Ray.lrc",
+            "disableIK": true,
             "OVRMultiLineSetup": true
         },
         "Snow Fairy Story": {

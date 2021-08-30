@@ -14,6 +14,7 @@ const rendererSetup = {
 function genRendererSetup(db, i) {
     rendererSetup.songData = {};
     rendererSetup.mmd = {};
+    console.log(db);
     let songname = db.tdata[i];
     console.log("song : " + songname);
     console.log("index :", i);
@@ -45,6 +46,7 @@ function genRendererSetup(db, i) {
     rendererSetup.mmd.chrDressName = locChrData.mmd.dress.name;
     rendererSetup.mmd.chrName = locChrData.name[1];
     rendererSetup.mmd.stage = null;
+    rendererSetup.mmd.ikSetup = db.ikSetups[i]?db.ikSetups[i]:false;
     //song
     rendererSetup.songData.songPath = db.dir[0] + db.list[i];
     rendererSetup.songData.songname = db.tdata[i];
@@ -99,7 +101,7 @@ const rendererInit = function () {
 
         d = document.querySelector("#setup select#stageSl");
         v = d.options[d.selectedIndex].value;
-        if (v != 'null' || i != 0) {
+        if (d.selectedIndex != 0) {
             console.log(chrData.stages[d.selectedIndex]);
             rendererSetup.mmd.stage = {};
             rendererSetup.mmd.stage.name = chrData.stages[d.selectedIndex - 1].name;

@@ -31,6 +31,7 @@ function mkSongtrack(filterlogic) {
   tDB.lyricsRootDir = './assets/lyrics';
   tDB.lyricsPaths = [];
   tDB.OverRideMultiLine = [];
+  tDB.ikSetups = [];
   for (i in list) {
     let title = list[i][0];
     let song = list[i][1].song;
@@ -46,6 +47,7 @@ function mkSongtrack(filterlogic) {
     let camAuthor = list[i][1].camAuthor;
     let lyricsPath = list[i][1].lyricsPath;
     let OverRideMultiLine = list[i][1].OVRMultiLineSetup;
+    let ikSetups = list[i][1].disableIK?list[i][1].disableIK:null;
     if (isKor && list[i][1].kor) {
       title = list[i][1].kor.title ? list[i][1].kor.title : title;
       song = list[i][1].kor.song ? list[i][1].kor.song : song;
@@ -70,6 +72,7 @@ function mkSongtrack(filterlogic) {
     tDB.artists.push(artist ? artist : null);
     tDB.lyricsPaths.push(lyricsPath);
     tDB.OverRideMultiLine.push(OverRideMultiLine ? OverRideMultiLine : null);
+    tDB.ikSetups.push(ikSetups);
   }
   this.data = tDB;
   console.log("mkSongtrack : ", "done");
