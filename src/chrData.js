@@ -605,7 +605,7 @@ const chrData = {
         {
             name: 'PDFT Sakura no ame Stage',
             author: 'dan1024 dduerta',
-            path: './assets/models/stage/PDFT Sakura no ame Stage/stage4.pmx',
+            path: './assets/models/stage/PDFT Sakura no Ame Stage 4/stage4.pmx',
             pos: [0, 0, 0]
         }
     ]
